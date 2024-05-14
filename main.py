@@ -62,9 +62,10 @@ def clock_in():
         nested_shadow_root = get_shadow_root(web_punch_content)
 
         # button within the nested shadow DOM
-        clock_in_button = nested_shadow_root.find_element(
-            By.CLASS_NAME, 'btn-text')
-        clock_in_button.click()
+        button = WebDriverWait(nested_shadow_root, 10).until(
+            EC.element_to_be_clickable((By.CLASS_NAME, 'btn-text')))
+        button.click()
+
         print('Clock-in button clicked successfully!')
 
     except NoSuchElementException as e:
