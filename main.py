@@ -66,7 +66,7 @@ def clock_in():
             EC.element_to_be_clickable((By.CLASS_NAME, 'btn-text')))
         button.click()
 
-        print('Clock-in button clicked successfully!')
+        print('button clicked successfully!')
 
     except NoSuchElementException as e:
         print(f'NoSuchElementException: {e}')
