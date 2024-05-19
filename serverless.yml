@@ -1,0 +1,20 @@
+service: geo-bot-lambda
+
+useDotenv: true
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'prod'}
+  region: 'us-east-1'
+  ecr:
+    images:
+      img:
+        path: ./
+        platform: linux/amd64
+
+functions:
+  geo-bot:
+    timeout: 60
+    memorySize: 2048
+    image:
+      name: img

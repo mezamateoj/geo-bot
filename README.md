@@ -1,9 +1,23 @@
 # GeoVictoria clock in bot 
 
-## If you have conda install
+Bot deploy on a aws lambda using serverless: https://www.serverless.com/
 
->you can create a conda env with all the packages with the following command:
+And for the chrome drivers for selenium we get them from this image:
+https://github.com/umihico/docker-selenium-lambda/blob/main/README.md
 
-conda env create -f environment.yml
+```bash
+$ npm install -g serverless # skip this line if you have already installed Serverless Framework
+$ serverless deploy
+# test deploy function
+$ sls invoke --function your-func-name
+```
 
-run python main.py
+### run locally
+
+```bash
+python main.py
+```
+
+TODO:
+* add schedule to the serverless.yml
+* github actions
